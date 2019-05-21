@@ -5,7 +5,7 @@ import com.ffa.domain.Customer;
 public class Request {
 
     private String httpMethod;
-    private CustomerRequestActionEnum customerRequestActionEnum;
+    private String customerRequestActionEnum;
     private Customer customer;
 
     public String getHttpMethod() {
@@ -16,11 +16,11 @@ public class Request {
         this.httpMethod = httpMethod;
     }
 
-    public CustomerRequestActionEnum getCustomerRequestActionEnum() {
+    public String getCustomerRequestActionEnum() {
         return customerRequestActionEnum;
     }
 
-    public void setCustomerRequestActionEnum(CustomerRequestActionEnum customerRequestActionEnum) {
+    public void setCustomerRequestActionEnum(String customerRequestActionEnum) {
         this.customerRequestActionEnum = customerRequestActionEnum;
     }
 

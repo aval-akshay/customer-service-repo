@@ -19,7 +19,7 @@ public class CustomerRequestHandler
          Customer customer = null;
          System.out.println("Request"+ request.getCustomerRequestActionEnum());
          System.out.println(("httpmethod"+ request.getHttpMethod()));
-         switch(request.getCustomerRequestActionEnum().getValue())
+         switch(request.getCustomerRequestActionEnum())
          {
              case "fetchAllCustomer":
 
