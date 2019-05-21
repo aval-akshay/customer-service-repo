@@ -1,9 +1,11 @@
-package com.ffa.dao;
+package com.ffa.domain;
 
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+
+import java.util.Date;
 
 @DynamoDBTable(tableName = "Customer")
 public class Customer {
