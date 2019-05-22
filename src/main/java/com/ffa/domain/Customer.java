@@ -24,6 +24,8 @@ public class Customer {
     private Date dateOfAnniversary;
     @DynamoDBAttribute
     private Boolean active;
+    @DynamoDBAttribute
+    private String category;
 
     public Customer() {
     }
@@ -92,5 +94,13 @@ public class Customer {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

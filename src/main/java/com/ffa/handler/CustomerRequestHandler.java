@@ -17,9 +17,9 @@ public class CustomerRequestHandler
     public static Object handleRequest(Request request, Context context)throws Exception
      {
          Customer customer = null;
-         System.out.println("Request"+ request.getCustomerRequestActionEnum());
+         System.out.println("Request"+ request.getAction());
          System.out.println(("httpmethod"+ request.getHttpMethod()));
-         switch(request.getCustomerRequestActionEnum())
+         switch(request.getAction())
          {
              case "fetchAllCustomer":
 
@@ -49,4 +49,6 @@ public class CustomerRequestHandler
          }
         return null;
      }
+
+
 }
