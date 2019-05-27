@@ -4,10 +4,13 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.ffa.dao.CustomerDaoImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class DynamoDBManager {
-
+    private static final Logger log = LogManager.getLogger(CustomerDaoImpl.class);
     private static volatile DynamoDBManager instance;
 
     private static DynamoDBMapper mapper;
@@ -15,9 +18,10 @@ public class DynamoDBManager {
     private DynamoDBManager() {
 
         AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-        //TODO-- Need to parameterised it
-        client.setRegion(Region.getRegion(Regions.AP_SOUTHEAST_2));
+        Region region = Region.getRegion(Regions.fromName(System.getenv("AWS_REGION")));
+        client.setRegion(region);
         mapper = new DynamoDBMapper(client);
+        log.debug("AWS Region is {}", region.toString());
     }
 
     public static DynamoDBManager instance() {

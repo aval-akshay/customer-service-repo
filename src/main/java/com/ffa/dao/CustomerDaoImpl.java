@@ -7,13 +7,14 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.ffa.domain.Customer;
 import com.ffa.manager.DynamoDBManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 public class CustomerDaoImpl implements CustomerDaoInterface{
 
-    private static final Logger log = Logger.getLogger(CustomerDaoImpl.class);
+    private static final Logger log = LogManager.getLogger(CustomerDaoImpl.class);
     private static final DynamoDBMapper mapper = DynamoDBManager.mapper();
     private static volatile CustomerDaoImpl instance;
 
